@@ -11,19 +11,20 @@ void createTxtFilePlusWriteAlot()
 {
 	string someIsh;
 	int someNum=0;
-	ofstream newFile("myNewTxtFile.txt");
+	fstream newFile("myNewTxtFile.txt");
 	if (!newFile) cerr << "AAAAAAAAAHHHHHHHH!!!!!!!";
 	cout << "Say something:" << endl;
-	cin >> someIsh;
+	getline(cin, someIsh);
 	cout << "How many times you want me to say this shyt? (Give me a number, or I'll break.):" << endl;
-	cin >> someNum;
+	//cin >> someNum;
 	//cout << someNum; //Debugging
-	while (!(someNum))   //(!(someNum >= INT_MIN) || (someNum <= INT_MAX)) // ((isdigit(someNum))) // (someNum)
+	while (!(cin >> someNum))   //(!(someNum >= INT_MIN) || (someNum <= INT_MAX)) // ((isdigit(someNum))) // (someNum)
 	{
-		//cin.clear();
-		//cin.ignore(numeric_limits<streamsize>::max());
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		//cerr << cin.good() << cin.eof() << cin.fail() << cin.bad() << " ";
 		cerr << "You rude. I said a number. Gimme a number... or get out... a**hole.:" << endl;
-		cin >> someNum;
+		//cin >> someNum;
 	}
 	for (int i = someNum; i > 0;--i)
 	{
