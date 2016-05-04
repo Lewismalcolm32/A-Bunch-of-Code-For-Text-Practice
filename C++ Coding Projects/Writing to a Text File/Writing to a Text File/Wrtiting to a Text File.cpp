@@ -10,7 +10,7 @@ using namespace std;
 void createTxtFilePlusWriteAlot()
 {
 	string someIsh;
-	int someNum=0;
+	int someNum = 0;
 	fstream newFile("myNewTxtFile.txt");
 	if (!newFile) cerr << "AAAAAAAAAHHHHHHHH!!!!!!!";
 	cout << "Say something:" << endl;
@@ -26,7 +26,7 @@ void createTxtFilePlusWriteAlot()
 		cerr << "You rude. I said a number. Gimme a number... or get out... a**hole.:" << endl;
 		//cin >> someNum;
 	}
-	for (int i = someNum; i > 0;--i)
+	for (int i = someNum; i > 0; --i)
 	{
 		cout << someIsh;
 		newFile << someIsh /*<< endl*/;
